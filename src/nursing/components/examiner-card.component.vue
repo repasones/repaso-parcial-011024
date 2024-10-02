@@ -1,7 +1,7 @@
 <!-- Card provides header, title, subtitle, content and footer as the named templates to place content. -->
 
 <template>
-    <pv-card>
+    <pv-card class="card">
         <template #header>
             <h1>{{ $t("full-name") }}: {{ examiner.firstName + ' ' + examiner.lastName }}</h1>
         </template>
@@ -16,12 +16,14 @@
 
         <template #content>
             ESTADISTICAS
+            Total Exams: {{ totalExams }}
         </template>
     </pv-card>
 </template>
 
 <script>
 import { Examiner } from "../model/examiner.entity.js"
+import { NursingAPI } from "../services/nursing-api.service.js";
 
 export default {
     name: 'ExaminerCard',
@@ -30,16 +32,19 @@ export default {
             type: Examiner,
             required: true
         }
-    }
-    /* data() {
+    },
+    data() {
         return {
-            examiner: new Examiner({
-                firstName: 'NOMBRE',
-                lastName: 'APELLIDO',
-                nationalProviderIdentifier: 'PE'
-            })
+            totalExams: 0,
+            api: new NursingAPI()
         }
-    } */
+    },
+    created() {
+        this.api.getAllExamsByIdExaminer(this.examiner.id)
+            .then(response => {
+                this.totalExams = response.data.length
+            })
+    }
 }
 </script>
 

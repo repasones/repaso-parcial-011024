@@ -4,7 +4,7 @@
 
 export class Exam {
     constructor({ id, patientId, examinerId, examDate, orientationScore,
-        registrationScore, attentionAndCalculationScore, recallScore, languageScore }) {
+        registrationScore, attentionAndCalculationScore, recallScore, languageScore, totalScore }) {
         this.id = id || 0;
         this.patientId = patientId || 0;
         this.examinerId = examinerId || 0;
@@ -14,6 +14,7 @@ export class Exam {
         this.attentionAndCalculationScore = attentionAndCalculationScore || 0;
         this.recallScore = recallScore || 0;
         this.languageScore = languageScore || 0;
+        this.totalScore = totalScore || 0;
     }
 }
 

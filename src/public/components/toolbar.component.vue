@@ -9,12 +9,17 @@
         </template>
 
         <template #end>
-            <button>
-                <RouterLink to="/home">Home</RouterLink>
-            </button>
-            <button>
-                <RouterLink to="/nursing/examiner-performance-overview">Examiner Performance Overview</RouterLink>
-            </button>
+            <RouterLink to="/home">
+                <pv-button>
+                    Home
+                </pv-button>
+            </RouterLink>
+
+            <RouterLink to="/nursing/examiner-performance-overview">
+                <pv-button>
+                    Examiner Performance Overview
+                </pv-button>
+            </RouterLink>
             <pv-selectbutton v-model="$i18n.locale" :options="languages" />
         </template>
     </pv-toolbar>

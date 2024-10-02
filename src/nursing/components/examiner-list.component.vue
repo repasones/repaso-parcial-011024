@@ -1,6 +1,8 @@
 <template>
-    <div v-for="examiner in examiners" class="card-container">
-        <ExaminerCard :examiner="examiner" />
+    <div class="cards-container">
+        <template v-for="examiner in examiners">
+            <ExaminerCard :examiner="examiner" />
+        </template>
     </div>
 </template>
 
@@ -31,4 +33,10 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px
+}
+</style>

@@ -8,6 +8,7 @@ import i18n from './i18n';
 import router from './routes/index'
 import Toolbar from 'primevue/toolbar';
 import SelectButton from 'primevue/selectbutton';
+import Button from 'primevue/button';
 
 
 const app = createApp(App);
@@ -28,5 +29,5 @@ app.use(PrimeVue, {
 app.component("pv-card", Card);
 app.component("pv-toolbar", Toolbar);
 app.component("pv-selectbutton", SelectButton);
-
+app.component("pv-button", Button);
 app.mount('#app');

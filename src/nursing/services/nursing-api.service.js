@@ -16,4 +16,8 @@ export class NursingAPI {
     getAllExams() {
         return http.get("mental-state-exams")
     }
+
+    getAllExamsByIdExaminer(id) {
+        return http.get(`mental-state-exams?examinerId=${id}`);
+    }
 }
