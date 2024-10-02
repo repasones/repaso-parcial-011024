@@ -16,3 +16,7 @@ export class Exam {
         this.languageScore = languageScore || 0;
     }
 }
+
+/* El concepto Calificación Total de un examen (total score), debe ser calculado como la sumatoria
+de puntajes obtenidos por el patient en la evaluación para orientationScore, registrationScore,
+attentionAndCalculationScore, recallScore y languageScore. */
